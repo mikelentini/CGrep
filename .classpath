@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="lib" path="libs/akka-actor_2.10-2.1.0.jar"/>
+	<classpathentry kind="lib" path="libs/akka-agent_2.10-2.1.0.jar"/>
+	<classpathentry kind="lib" path="libs/akka-camel_2.10-2.1.0.jar"/>
+	<classpathentry kind="lib" path="libs/akka-cluster-experimental_2.10-2.1.0.jar"/>
+	<classpathentry kind="lib" path="libs/akka-contrib_2.10-2.1.0.jar"/>
+	<classpathentry kind="lib" path="libs/akka-dataflow_2.10-2.1.0.jar"/>
+	<classpathentry kind="lib" path="libs/akka-durable-mailboxes-2.1.0.jar"/>
+	<classpathentry kind="lib" path="libs/akka-file-mailbox_2.10-2.1.0.jar"/>
+	<classpathentry kind="lib" path="libs/akka-kernel_2.10-2.1.0.jar"/>
+	<classpathentry kind="lib" path="libs/akka-mailboxes-common_2.10-2.1.0.jar"/>
+	<classpathentry kind="lib" path="libs/akka-remote_2.10-2.1.0.jar"/>
+	<classpathentry kind="lib" path="libs/akka-remote-tests-experimental_2.10-2.1.0.jar"/>
+	<classpathentry kind="lib" path="libs/akka-slf4j_2.10-2.1.0.jar"/>
+	<classpathentry kind="lib" path="libs/akka-testkit_2.10-2.1.0.jar"/>
+	<classpathentry kind="lib" path="libs/akka-transactor_2.10-2.1.0.jar"/>
+	<classpathentry kind="lib" path="libs/akka-zeromq_2.10-2.1.0.jar"/>
+	<classpathentry kind="lib" path="libs/camel-core-2.10.0.jar"/>
+	<classpathentry kind="lib" path="libs/config-1.0.0.jar"/>
+	<classpathentry kind="lib" path="libs/jna-3.0.9.jar"/>
+	<classpathentry kind="lib" path="libs/jnr-constants-0.8.2.jar"/>
+	<classpathentry kind="lib" path="libs/netty-3.5.8.Final.jar"/>
+	<classpathentry kind="lib" path="libs/protobuf-java-2.4.1.jar"/>
+	<classpathentry kind="lib" path="libs/scala-library.jar"/>
+	<classpathentry kind="lib" path="libs/scala-stm_2.10-0.7.jar"/>
+	<classpathentry kind="lib" path="libs/slf4j-api-1.7.2.jar"/>
+	<classpathentry kind="lib" path="libs/uncommons-maths-1.2.2a.jar"/>
+	<classpathentry kind="lib" path="libs/zeromq-scala-binding_2.10-0.0.7.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
