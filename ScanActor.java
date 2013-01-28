@@ -2,8 +2,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -38,24 +38,27 @@ public class ScanActor extends UntypedActor {
 	
 	private void scanStdIn() {
 		ArrayList<String> lines = new ArrayList<String>();
-		Scanner scanner = new Scanner(System.in);
+		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		String line;
 		int lineNum = 0;
 		
-		while (scanner.hasNext()) {
-			line = scanner.nextLine();
-			
-			Matcher matcher = patternObj.matcher(line);
-			
-			if (matcher.find()) {
-				lines.add(lineNum + " " + line);
+		try {
+			while ((line = in.readLine()) != null && line.length() != 0) {
+				Matcher matcher = patternObj.matcher(line);
+				
+				if (matcher.find()) {
+					lines.add(lineNum + " " + line);
+				}
+				
+				lineNum++;
 			}
 			
-			lineNum++;
+			in.close();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 		
 		collectionActor.tell(new Found(this.filename, lines));
-		scanner.close();
 	}
 	
 	private void scanFile() {
