@@ -58,7 +58,7 @@ public class ScanActor extends UntypedActor {
 			e.printStackTrace();
 		}
 		
-		collectionActor.tell(new Found(this.filename, lines));
+		collectionActor.tell(new Found(this.filename, lines), this.getSelf());
 	}
 	
 	private void scanFile() {
@@ -80,7 +80,7 @@ public class ScanActor extends UntypedActor {
 				lineNum++;
 			}
 			
-			collectionActor.tell(new Found(this.filename, lines));
+			collectionActor.tell(new Found(this.filename, lines), this.getSelf());
 			
 			br.close();
 		} catch (FileNotFoundException e) {

@@ -27,16 +27,16 @@ public class CGrep {
         ActorSystem system = ActorSystem.create("CGrep");
 
         ActorRef collectionActor = system.actorOf(new Props(CollectionActor.class));
-        collectionActor.tell(new FileCount(filecount));
+        collectionActor.tell(new FileCount(filecount), collectionActor);
         
         if (!filenames.isEmpty()) {
 	        for (int i = 0; i < filecount; i++) {
 	        	ActorRef scanActor = system.actorOf(new Props(ScanActor.class));
-	        	scanActor.tell(new Configure(filenames.get(i), pattern, collectionActor));
+	        	scanActor.tell(new Configure(filenames.get(i), pattern, collectionActor), collectionActor);
 	        }
         } else {
         	ActorRef scanActor = system.actorOf(new Props(ScanActor.class));
-        	scanActor.tell(new Configure(null, pattern, collectionActor));
+        	scanActor.tell(new Configure(null, pattern, collectionActor), collectionActor);
         }
     }
 }
