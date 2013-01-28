@@ -4,12 +4,22 @@ import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
 
+/**
+ * CGrep is the driving class in this application. 
+ * It checks that the command line arguments are in the 
+ * correct format, then checks how many files we are checking. 
+ * The ActorSystem is created and the CollectionActor is added to it. 
+ * Then, we send a FileCount message to the CollectionActor. If no 
+ * files are provided, we tell one ScanActor to scan stdin. If files 
+ * are provided, we create one ScanActor per file and send each 
+ * a Configure message.
+ */
 public class CGrep {
     public static void main(String... args) {
     	int filecount = 0;
     	
     	if (args.length == 0) {
-    		System.out.println("Usage: java CGrep pattern [file...]");
+    		System.out.println("Usage: java -jar CGrep pattern [file...]");
     		System.exit(0);
     	}
     	
